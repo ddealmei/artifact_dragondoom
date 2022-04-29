@@ -1,4 +1,4 @@
-# Proof of Concept attack on Dragonfly 
+# Dragondoom: Proof of Concept attack on Dragonfly
 
 The PAKE Dragonfly is used as SAE in WPA3 authentication. 
 A critical point during the authentication is when the password needs to be derived into an elliptic curve point. 
@@ -78,7 +78,7 @@ done
 
 ## Restoring your WiFi
 
-Since we needed to kill any running wpa_supplicant, you can restore your with the following:
+Since we needed to kill any running wpa_supplicant, you can restore yours with the following:
 ```sh
 sudo /sbin/wpa_supplicant -B -u -s -O /run/wpa_supplicant
 ```
