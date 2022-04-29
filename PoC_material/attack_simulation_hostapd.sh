@@ -13,7 +13,7 @@ if [ -z "$1" ]; then
     password=""
     echo "Looking for a password at least 8-byte long (mandatory for SAE)"
     while [ ${#password} -lt 7 ]; do
-        passwords=$(shuf -n 15 "$DICTIONARY" | tr ":" "k" | tr '-' 'k' | tr '/' 'k') 
+        password=$(shuf -n 1 "$DICTIONARY" | tr ":" "k" | tr '-' 'k' | tr '/' 'k') 
     done
     echo -e "Password found ($password)\n"
 else
