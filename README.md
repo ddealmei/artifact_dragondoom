@@ -42,7 +42,7 @@ sudo docker run --mount type=bind,source="$(pwd)"/shared_folder,target=/PoC/shar
 ### Running experiments
 
 
-Inside the docker, you may run the following command to reproduce our results. If the password is not provided, it will be chosen randomly from a dictionary (see variable DICTIONARY in the script). You may want to set `DICTIONARY` to `$DATA_DIT/100_passwords.txt` for a faster run.:
+Inside the docker, you may run the following command to reproduce our results. If the password is not provided, it will be chosen randomly from a dictionary (see variable DICTIONARY in the script). You may want to set `DICTIONARY` to `$DATA_DIR/100_passwords.txt` for a faster run.:
 ```bash
 ./attack_simulation_hostapd.sh [password]
 ```
