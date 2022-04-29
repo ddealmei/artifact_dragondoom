@@ -87,7 +87,7 @@ int dragonfly_get_random_qr_qnr(const struct crypto_bignum *prime,
                                 struct crypto_bignum **qnr)
 {
 	*qr = *qnr = NULL;
-	/* ddealmei: Instead of generating random qr / nqr, we generate them once
+	/* Instead of generating random qr / nqr, we generate them once
 	 * and for all, and hardcode them. Tfis is only to remove randomness in our
 	 * analysis. Original code can be found commented bellow. */
 	unsigned char qr_bin[] = { 0xe4, 0xf3, 0x30, 0x16, 0xe5, 0x3d, 0x3b, 0xec, 0x8d, 0x71, 0x69, 0x90, 0x47, 0xf1, 0x0f, 0x89, 0xa0, 0x37, 0x77, 0x1e, 0x5a, 0x66, 0x31, 0x3e, 0xf9, 0x43, 0x9f, 0x64, 0x42, 0x4a, 0x8b, 0xaf };
@@ -438,7 +438,7 @@ static int sae_derive_pwe_ecc(struct sae_data *sae, const uint8_t *addr1,
 
 	dummy_password = malloc(password_len);
 	tmp_password = malloc(password_len);
-	/* ddealmei: Fix the dummy password to password so that we can compare resulst form reference and new implementation */
+	/* Fix the dummy password to password so that we can compare resulst form reference and new implementation */
 	if (!dummy_password || !tmp_password ||
 		/*crypto_get_random(dummy_password, password_len) < 0*/memcpy(dummy_password, password, password_len) == NULL)
 		goto fail;
@@ -603,7 +603,7 @@ static int sae_derive_commit_element_ecc(struct sae_data *sae,
 static int sae_derive_commit(struct sae_data* sae) {
 	struct crypto_bignum* mask;
 	int ret;
-	/* ddealmei: Here we set a constant mask to avoid its CF effects on the
+	/* Here we set a constant mask to avoid its CF effects on the
 		 * secret point coordinates. The mask has been generated randomly in
 		 * python, and hardcoded. Original code is commented bellow. The idea is
 		 * basically that we generate mask and sae_rand, and compute
